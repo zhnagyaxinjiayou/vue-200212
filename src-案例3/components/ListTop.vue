@@ -4,7 +4,7 @@
         <a href="javascript:;" @click="deleteC">删除</a>
     </div>
     <p class="user"><span >{{comment.username}}</span><span>说:</span></p>
-    <p class="centence">{{comment.conten}}!</p>
+    <p class="centence">{{comment.cotent}}!</p>
 </li>
 </template>
 
@@ -21,6 +21,7 @@ export default {
 </script>
 
 <style scoped>
+
 li {
   transition: .5s;
   overflow: hidden;
@@ -47,4 +48,5 @@ li {
 .user {
   font-size: 22px;
 }
+
 </style>

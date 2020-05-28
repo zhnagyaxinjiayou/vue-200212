@@ -1,5 +1,5 @@
 <template>
-   <div class="col-md-4">
+ <div class="col-md-4">
         <form class="form-horizontal">
           <div class="form-group">
             <label>用户名</label>
@@ -7,7 +7,7 @@
           </div>
           <div class="form-group">
             <label>评论内容</label>
-            <textarea class="form-control" rows="6" placeholder="评论内容" v-model="conten"></textarea>
+            <textarea class="form-control" rows="6" placeholder="评论内容" v-model="cotent"></textarea>
           </div>
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
@@ -20,28 +20,32 @@
 
 <script type="text/ecmascript-6">
 export default {
-    props:['addComments'],
+    // props:['addComments'],//props通信
     data(){
         return{
-          username:'',
-          conten:''
+            username:'',
+            cotent:'',
         }
     },
     methods:{
         addC(){
-            let username=this.username
-            let conten=this.conten
-            let id=Date.now()
-            if(username.trim() && conten.trim()){
+            // 收集信息
+            let username=this.username;
+            let cotent=this.cotent;
+            let id=Date.now();
+            // 将信息整理成对象，放到数组的前面
+            if(username.trim()&&cotent.trim()){
                 let obj={
                     username,
-                    conten,
+                    cotent,
                     id
                 }
-                this.addComments(obj)
+                // this.addComments(obj)
+                // 组件间通信
+                this.$emit('addComments',obj)
             }
             this.username=''
-            this.conten=''
+            this.cotent=''
         }
     }
 }
