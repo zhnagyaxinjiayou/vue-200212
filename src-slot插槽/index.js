@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import App from '@/App'
 new Vue({
-    el: "#app",
+    beforeCreate(){
+        Vue.prototype.$bus=this
+    },
+    el: '#app',
     render:h=>h(App)
 })

@@ -10,7 +10,8 @@ module.exports = {
   // 绝对路径
   //   entry: path.resolve(__dirname, "src/index.js"), //入口
   //1.入口:指示以哪个文件开始打包，以入口文件为起点，构造依赖关系图，将所有依赖的文件全部打包进来
-  entry: "./src/index.js",
+  // entry: "./src/index.js",
+  entry: ["@babel/polyfill", "./src/index.js"],
   //2.输出：output打包资源输出到哪里去
   output: {
     //   path对象
