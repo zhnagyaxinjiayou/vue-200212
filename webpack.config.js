@@ -18,6 +18,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"), //打包完成后的文件夹放在dist文件夹会自动创建好
     // 打包完成后在这个文件加下的名字叫什么
     filename: "main.js",
+    publicPath: "/",
   },
   //3.配置各种loaderc：加载器，webpack工具本身只能打包js、json资源，其他资源打包不了，需要借助loader解析其它资源，webpack才能打包这些资源
   module: {
@@ -116,6 +117,7 @@ module.exports = {
         changeOrigin: true, // 支持跨域, 如果协议/主机也不相同, 必须加上
       },
     },
+    historyApiFallback: true, // 任意的 404 响应都被替代为 index.html
   },
   // 7.配置devtool定位错误位置
   devtool: "cheap-module-eval-source-map", //定位出错的原始代码行

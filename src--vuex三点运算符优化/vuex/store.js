@@ -27,7 +27,7 @@ const actions = {
 //   decrement(context) {
 //     context.commit("decrement");
 //   },
-  incrementIfOdd(context) {
+  INCREMENTIFODD(context) {
     if (context.state.count % 2 === 1) {
       context.commit("increment");
     }
