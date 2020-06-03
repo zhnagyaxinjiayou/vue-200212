@@ -2,11 +2,13 @@
  <div role="tabpanel" class="tab-pane active" id="Message">
     <ul class="list-group" >
         <li class="list-group-item" v-for="(m) in messages" :key="m.id">
-            <router-link to='/home/message/info'>{{m.content}}</router-link>
+            <!-- <router-link :to="'/home/message/info'+m.id + '?msgContent='+m.content">{{m.content}}</router-link> -->
+            <router-link :to="{name:'msgInfo',params:{msgId:m.id},query:{msgContent:m.content}}">{{m.content}}</router-link>
             <!-- <a href="##">message01</a> -->
         </li>
        
     </ul>
+    <input type="text">
     <div class="alert alert-success" role="alert">
         <router-view></router-view>
     </div>

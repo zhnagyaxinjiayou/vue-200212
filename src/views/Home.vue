@@ -21,6 +21,8 @@
 
 <script type="text/ecmascript-6">
 export default {
+    // 给当前组件起名字
+      name:'Home',
 }
 </script>
 

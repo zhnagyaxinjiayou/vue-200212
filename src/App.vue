@@ -20,7 +20,9 @@
             </ul>
             <!-- Tab panes -->
             <div class="tab-content col-md-6">
+               <keep-alive include='Home'>
                <router-view></router-view>
+               </keep-alive>
                
             </div>
         </div>
